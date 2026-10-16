@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>somewhere, at night.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<video id="background-video" class="background-video" src="background.mp4" autoplay muted loop playsinline></video>
+
+
+
+  <div class="overlay"></div>
+<div class="grain"></div>
+  <canvas id="slate" class="slate"></canvas>
+
+ <header>
+  <a href="#" class="logo">ル˖ ♡ ₍ ᐢ..ᐢ ₎ 📍 ࣪ . ></a>
+ <div class="header-actions">
+  <button id="scene-toggle" type="button" aria-label="Choose background" title="Scene" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="16" rx="2"/>
+      <circle cx="9" cy="10" r="1.6"/>
+      <path d="m3 17 5-5 4 4 3-3 6 6"/>
+    </svg>
+  </button>
+
+  <button id="notes-toggle" type="button" aria-label="Open notes" title="Notes" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 3h14a2 2 0 0 1 2 2v9l-7 7H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+      <path d="M14 21v-5a2 2 0 0 1 2-2h5"/>
+      <path d="M8 8h8M8 12h5"/>
+    </svg>
+  </button>
+
+  <button id="draw-open" type="button" aria-label="Draw" title="Draw">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 20h9"/>
+      <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>
+    </svg>
+  </button>
+
+  <button id="toggle-ui" type="button" aria-label="Hide interface" title="Hide interface">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.9 17.9A10.9 10.9 0 0 1 12 20c-7 0-11-8-11-8a18.5 18.5 0 0 1 5.1-5.9"/>
+      <path d="M9.9 4.2A9.9 9.9 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.2 3.2"/>
+      <path d="M14.1 14.1a3 3 0 1 1-4.2-4.2"/>
+      <path d="m1 1 22 22"/>
+    </svg>
+  </button>
+</div>
+</header>
+
+  <main>
+    <section class="content">
+      <p class="eyebrow">AHANA'S CORNER ✧ </p>
+      <h1>for the late nights.</h1>
+    
+
+      
+<div class="player">
+  <p class="player-label">NOW PLAYING...</p>
+</div>
+
+  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4t5PCsyWO1nhDpGUWJhUXc?utm_source=generator&theme=0&si=2e0b0117956a4db0" width="80%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
+<div class="ambient-widget">
+  <button
+    id="ambient-toggle"
+    class="ambient-button"
+    type="button"
+    aria-label="Play ambient sounds"
+    aria-pressed="false"
+    title="Toggle ambient sounds"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      width="23"
+      height="23"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 9h4l5-4v14l-5-4H3z"/>
+      <path d="M16 9a5 5 0 0 1 0 6"/>
+      <path d="M18.5 6.5a9 9 0 0 1 0 11"/>
+    </svg>
+  </button>
+
+  <div class="ambient-volume-panel" id="ambient-volume-panel">
+  <select id="ambient-select" aria-label="choose ambient sound"></select>
+  <span>volume</span>
+  <input
+    id="ambient-volume"
+    type="range"
+    min="0"
+    max="100"
+    value="20"
+    aria-label="volume"
+  >
+  <audio id="ambient-audio" loop preload="none" src="rain.mp3"></audio>
+</div>
+    </section>
+  </main>
+  <footer>
+    <span>with love - aanya. </span>
+    <span id="clock">00:00</span>
+  </footer>
+  <button id="show-ui" type="button" aria-label="Show interface" title="Show interface">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="m3 10 9-7 9 7"/>
+      <path d="M5 9v12h14V9"/>
+      <path d="M9 21v-7h6v7"/>
+    </svg>
+  </button>
+  <div class="draw-toolbar" id="draw-toolbar">
+  <input id="draw-color" type="color" value="#ffffff" aria-label="Brush color">
+  <input id="draw-size" type="range" min="1" max="30" value="4" aria-label="Brush size">
+  <button id="draw-eraser" type="button" aria-pressed="false">eraser</button>
+  <button id="draw-undo" type="button">undo</button>
+  <button id="draw-clear" type="button">clear</button>
+  <button id="draw-save" type="button">save</button>
+  <button id="draw-close" type="button">done</button>
+</div>
+<div class="scene-panel" id="scene-panel" hidden></div>
+<div class="notes-panel" id="notes-panel" hidden>
+  <img id="note-sticker" class="note-sticker" alt="" hidden>
+
+  <div class="notes-tabs">
+    <button id="tab-notes" type="button" class="is-active">notes</button>
+    <button id="tab-todo" type="button">to-do <span id="todo-count"></span></button>
+  </div>
+
+  <div class="sticker-row">
+    <label for="sticker-select">sticker</label>
+    <select id="sticker-select"></select>
+  </div>
+
+  <div id="notes-view">
+    <textarea id="notes-text" placeholder="jot something down..."></textarea>
+    <button id="notes-to-todo" type="button">turn into to-do list</button>
+  </div>
+
+  <div id="todo-view" hidden>
+    <form id="todo-form">
+      <input id="todo-input" type="text" placeholder="add a task" autocomplete="off">
+      <button type="submit">add</button>
+    </form>
+    <ul id="todo-list"></ul>
+    <button id="todo-clear-done" type="button">clear done</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
