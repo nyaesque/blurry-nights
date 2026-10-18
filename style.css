@@ -763,3 +763,28 @@ footer span:not(#clock) {
 .draw-toolbar {
   bottom: calc(24px + env(safe-area-inset-bottom));
 }
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+  white-space: nowrap;
+  background: transparent;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.banner-track {
+  display: inline-block;
+  animation: banner-scroll 25s linear infinite;
+}
+
+.banner-track span {
+  display: inline-block;
+  padding-right: 5rem;
+}
+
+@keyframes banner-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
