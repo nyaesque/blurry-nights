@@ -136,6 +136,8 @@ if (bg && sceneBtn && scenePanel) {
   { name: "tokyo", src: "background.mp4" },
   { name: "seoul", src: "seoul.mp4" },
   { name: "yeouido", src: "yeouido.mp4" },
+  { name: "nyc", src: "nyc.mp4" },
+  { name: "shanghai", src: "shanghai.mp4" },
 ];
   let index = 0;
   let switchId = 0;

@@ -754,3 +754,12 @@ footer #clock {
 footer span:not(#clock) {
   order: 2;
 }
+.player-note {
+  margin-top: 8px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #8e90a0;
+}
+.draw-toolbar {
+  bottom: calc(24px + env(safe-area-inset-bottom));
+}
